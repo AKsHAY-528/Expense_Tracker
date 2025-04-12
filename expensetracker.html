@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="expensetrackers.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h2 id="greeting" class="fade-in">💰 Expense Tracker</h2>
+
+  <!-- Registration Modal -->
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <h3>Welcome! Let's Get Started</h3>
+      <form id="userForm">
+        <label for="userName">Enter your name:</label>
+        <input type="text" id="userName" required placeholder="Your Name" />
+
+        <label for="userIncome">Enter your monthly income:</label>
+        <input type="number" id="userIncome" required placeholder="e.g. 50000" />
+
+        <button type="submit">Start Tracking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Tracker Section -->
+  <div class="container fade-in-up" id="tracker">
+    <h4>Your Balance</h4>
+    <h1 id="balance">&#8377;0.00</h1>
+
+    <div class="inc-exp-container glass">
+      <div>
+        <h4>Income</h4>
+        <p id="money-plus" class="money-plus">+&#8377;0.00</p>
+      </div>
+      <div>
+        <h4>Expense</h4>
+        <p id="money-minus" class="money-minus">-&#8377;0.00</p>
+      </div>
+    </div>
+
+    <h3>Income History</h3>
+    <ul id="income-list" class="list"></ul>
+
+    <h3>Expense History</h3>
+    <ul id="expense-list" class="list"></ul>
+
+    <h3>Add Income</h3>
+    <form id="income-form">
+      <label for="income-text">Category</label>
+      <select id="income-text" required>
+        <option value="" disabled selected>Select income type</option>
+        <option value="Salary">Salary</option>
+        <option value="Freelance">Freelance</option>
+        <option value="Bonus">Bonus</option>
+        <option value="Investment">Investment</option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="income-amount">Amount</label>
+      <input type="number" id="income-amount" placeholder="e.g. 5000" required />
+      <button class="btn">Add Income</button>
+    </form>
+
+    <h3>Add Expense</h3>
+    <form id="expense-form">
+      <label for="expense-text">Category</label>
+      <select id="expense-text" required>
+        <option value="" disabled selected>Select expense type</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Rent">Rent</option>
+        <option value="Utilities">Utilities</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Transport">Transport</option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="expense-amount">Amount</label>
+      <input type="number" id="expense-amount" placeholder="e.g. 2000" required />
+      <button class="btn">Add Expense</button>
+    </form>
+  </div>
+
+  <script src="trackerscript.js"></script>
+</body>
+</html>
